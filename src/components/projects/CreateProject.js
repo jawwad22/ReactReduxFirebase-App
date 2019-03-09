@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import {createProject} from '../../store/actions/projectActions'
+import { connect } from 'react-redux'
+import { createProject } from '../../store/actions/projectActions'
 class CreateProject extends Component {
     state = {
-        title:'',
-        content:''
+        title: '',
+        content: ''
     }
-    handleChange=(e)=>{
+    handleChange = (e) => {
         this.setState({
-            [e.target.id]:e.target.value
+            [e.target.id]: e.target.value
         })
     }
-    handleSubmit=(e)=>{
-e.preventDefault();
-// console.log(this.state)
-this.props.createProject(this.state)
+    handleSubmit = (e) => {
+        console.log('CreateProject-SubmitClick')
+        console.log(this.state)
+        console.log('-----------------')
+
+        e.preventDefault();
+        this.props.createProject(this.state)
     }
     render() {
         return (
@@ -27,7 +30,7 @@ this.props.createProject(this.state)
                     </div>
                     <div className="input-field">
                         <label htmlFor="content">Content</label>
-                     <textarea  onChange={this.handleChange}  id="content" className="materialize-textarea"></textarea>
+                        <textarea onChange={this.handleChange} id="content" className="materialize-textarea"></textarea>
                     </div>
                     <div className="input-field">
                         <button className="btn pink lighten-1 z-depth-0">Create</button>
@@ -37,9 +40,14 @@ this.props.createProject(this.state)
         )
     }
 }
-const mapDispatchToProps=(dispatch)=>{
-    return{
-        createProject:(project)=>dispatch(createProject(project))
+const mapDispatchToProps = (dispatch) => {
+    console.log('CreateProject-mapDispatchToProps Run')
+    console.log('------------------')
+
+    return {
+        createProject: (project) => {
+            console.log(project)
+            dispatch(createProject(project))}
     }
 }
-export default connect(null,mapDispatchToProps)(CreateProject)
+export default connect(null, mapDispatchToProps)(CreateProject)
