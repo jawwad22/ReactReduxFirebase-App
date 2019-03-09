@@ -16,6 +16,8 @@ const projectReducer = (state = initState, action) => {
      case 'CREATE_PROJECT':
          console.log('created project',action.project)
          break;
+         default:
+         break;
  }
     return state
 }
