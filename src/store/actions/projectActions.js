@@ -14,7 +14,7 @@ export const createProject = (project) => {
         }).then(() => {
             console.log('Sucesss')
             console.log('-------------')
-
+            console.log(project)
             dispatch({
                 type: 'CREATE_PROJECT',
                 project
