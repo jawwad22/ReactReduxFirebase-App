@@ -12,9 +12,9 @@ class CreateProject extends Component {
         })
     }
     handleSubmit = (e) => {
-        console.log('CreateProject-SubmitClick')
-        console.log(this.state)
-        console.log('-----------------')
+        // console.log('CreateProject-SubmitClick')
+        // console.log(this.state)
+        // console.log('-----------------')
 
         e.preventDefault();
         this.props.createProject(this.state)
@@ -41,12 +41,12 @@ class CreateProject extends Component {
     }
 }
 const mapDispatchToProps = (dispatch) => {
-    console.log('CreateProject-mapDispatchToProps Run')
-    console.log('------------------')
+    // console.log('CreateProject-mapDispatchToProps Run')
+    // console.log('------------------')
 
     return {
         createProject: (project) => {
-            console.log(project)
+            // console.log(project)
             dispatch(createProject(project))}
     }
 }
